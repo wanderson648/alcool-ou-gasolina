@@ -13,7 +13,6 @@ public class MainActivity extends AppCompatActivity {
    private TextInputEditText editPrecoAlcool, editPrecoGasolina;
    private TextView txtResultado;
 
-
    @Override
    protected void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
@@ -48,13 +47,6 @@ public class MainActivity extends AppCompatActivity {
    }
 
    private Boolean validarCampos(String pAlcool, String pGasolina) {
-      boolean camposValidados = true;
-
-      if (pAlcool == null || pAlcool.equals("")) {
-         camposValidados = false;
-      } else if (pGasolina == null || pGasolina.equals("")) {
-         camposValidados = false;
-      }
-      return camposValidados;
+      return pAlcool != null && !pAlcool.equals("") && pGasolina != null && !pGasolina.equals("");
    }
 }
